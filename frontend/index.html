@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Log HCP Interaction</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6fb;
+margin:0;
+padding:20px;
+}
+
+.container{
+display:flex;
+gap:20px;
+}
+
+.form-section{
+background:white;
+padding:25px;
+border-radius:8px;
+width:70%;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chat-section{
+background:white;
+padding:20px;
+border-radius:8px;
+width:30%;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+display:flex;
+flex-direction:column;
+height:auto;
+}
+
+label{
+font-size:14px;
+font-weight:600;
+margin-top:10px;
+display:block;
+}
+
+input,select,textarea{
+width:100%;
+padding:8px;
+margin-top:5px;
+margin-bottom:12px;
+border:1px solid #ddd;
+border-radius:5px;
+}
+
+textarea{
+height:70px;
+}
+
+button{
+background:#4f6ef7;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#3c56d9;
+}
+
+.chat-box{
+flex:1;
+background:#f7f8fc;
+border-radius:5px;
+padding:10px;
+margin-bottom:10px;
+font-size:14px;
+}
+
+.chat-input{
+display:flex;
+gap:10px;
+}
+
+.chat-input input{
+flex:1;
+}
+.chat-box{
+height:350px;
+overflow-y:auto;
+background:#f5f7fb;
+padding:10px;
+border-radius:6px;
+margin-bottom:10px;
+}
+
+.user-msg{
+background:#d6e4ff;
+padding:8px;
+border-radius:6px;
+margin-bottom:8px;
+}
+
+.ai-msg{
+background:#dff5e1;
+padding:8px;
+border-radius:6px;
+margin-bottom:8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT FORM -->
+<div class="form-section">
+
+<h2>Log HCP Interaction</h2>
+
+<form id="interactionForm">
+
+<label>HCP Name</label>
+<input id="hcp" placeholder="Enter HCP Name">
+
+<label>Interaction Type</label>
+<select id="type">
+<option>Meeting</option>
+<option>Call</option>
+<option>Email</option>
+</select>
+
+<label>Date</label>
+<input type="date" id="date">
+
+<label>Time</label>
+<input type="time" id="time">
+
+<label>Attendees</label>
+<input id="attendees" placeholder="Enter attendees">
+
+<label>Topics Discussed</label>
+<textarea id="topics" placeholder="Topics discussed"></textarea>
+
+<label>Observed HCP Sentiment</label>
+<select id="sentiment">
+<option>Positive</option>
+<option>Neutral</option>
+<option>Negative</option>
+</select>
+
+<label>Outcome</label>
+<textarea id="outcome" placeholder="Outcome of interaction"></textarea>
+
+<label>Follow Up</label>
+<textarea id="followup" placeholder="Next steps"></textarea>
+
+<button type="submit">Log Interaction</button>
+
+</form>
+
+</div>
+
+
+<!-- RIGHT AI CHAT -->
+<div class="chat-section">
+
+<h3>AI Assistant</h3>
+
+<div class="chat-box" id="chatBox">
+
+<div class="ai-msg">
+
+AI assistant can help summarize interaction or extract details.
+Example:<br>
+Met Dr Sharma today. Discussed Product X. He showed positive interest.
+</div>
+</div>
+
+<div class="chat-input">
+
+<input id="chatText" placeholder="Describe interaction here">
+
+<button id="chatBtn">AI Assist</button>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
+
